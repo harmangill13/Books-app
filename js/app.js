@@ -13,30 +13,20 @@ window.onload = () => {
       }
     }
 
-    // try {
-    //   const response = await fetch(url, options)
-    //   const result = await response.text()
-    //   console.log(result)
-    // } catch (error) {
-    //   console.error(error)
-    // }
-    fetch('https://books-api7.p.rapidapi.com/books/find/title?title='+ userInput, options).then((data) => {
-     return data.json()
-    },
-    (err) => {
-      console.log("Error: ", err)
+    fetch(url, options)
+      .then((data) => {
+  
+      return data.json()
     }
     ).then(
-      (json) => {
-        console.log("JSON DATA: ", json)
-
-        if(json.Title && json.Author && json.Rating && json.Genres && json.array.length > 0){
-          json.forEach((books) => {
-            document.querySelector('#title').innerText = books.Title
-            document.querySelector('#author').innerText = books.Author
-            document.querySelector('#rating').innerText = books.Rating
-            document.querySelector('#genres').innerText = books.Genres
-        })
+      (data) => {
+        console.log("JSON DATA: ", data)
+        if (data && data.length > 0) {
+          const book = data[0]
+            document.querySelector('#title').innerText = book.title
+            document.querySelector('#author').innerText = book.author.first_name
+            document.querySelector('#rating').innerText = book.rating
+            document.querySelector('#genres').innerText = book.genres.join(", ")
         } else {
           console.log(document.querySelector('#title'))
           document.querySelector('dl').style.display = 'none'
@@ -47,7 +37,6 @@ window.onload = () => {
       }
     )
   })
-
 }
 const randomBook = () => {
   const booksArray =  [
