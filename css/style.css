@@ -1,0 +1,35 @@
+section1 {
+  text-align: center;
+}
+
+body {
+  background-image: url("https://images.pexels.com/photos/19670/pexels-photo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0 40px 0 40px;
+}
+
+.harry {
+  width: 210px;
+  height: 270px;
+}
+
+
+
+@media only screen and (max-width: 500px){
+  .harry {
+    width: 80px;
+    height: 110px;
+  }
+  body {
+    background-size: cover;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 6em
+}
