@@ -12,8 +12,14 @@ body {
 .harry {
   width: 210px;
   height: 270px;
+  border-radius: 3px;
 }
 
+.bookOfTheDay{
+  font-size: 25px;
+  border-radius: 5px;
+  border-color: lightblue;
+}
 
 
 @media only screen and (max-width: 500px){
