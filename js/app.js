@@ -18,6 +18,7 @@ window.onload = () => {
   
       return data.json()
     }
+    // we set the parameters of the array to data. Then use data as the array in the if statement
     ).then(
       (data) => {
         console.log("JSON DATA: ", data)
