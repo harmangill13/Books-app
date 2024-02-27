@@ -72,6 +72,10 @@ dd {
   body {
     background-size: cover;
   }
+  .color {
+    font-size: 12px;
+    position: relative;
+  }
 }
 
 .container {
